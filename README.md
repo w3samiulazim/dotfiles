@@ -1,0 +1,57 @@
+```
+                              .___      __    _____.__.__
+                            __| _/_____/  |__/ ____\__|  |   ____   ______
+                           / __ |/  _ \   __\   __\|  |  | _/ __ \ /  ___/
+                          / /_/ (  <_> )  |  |  |  |  |  |_\  ___/ \___ \
+                          \____ |\____/|__|  |__|  |__|____/\___  >____  >
+                               \/                               \/     \/
+
+                    This repository contains personal dotfiles of Samiul Azim.
+```
+
+# Dotfiles
+
+## Used Applications
+
+- **Distro:** Arch Linux
+- **Window Manager:** [Xmonad](https://gitlab.com/samiulazim/dotfiles/-/tree/main/.xmonad), [Spectrwm](https://gitlab.com/samiulazim/dotfiles/-/tree/main/.config/spectrwm)
+- **Shell:** [Fish](https://gitlab.com/samiulazim/dotfiles/-/tree/main/.config/fish), [Zsh](https://gitlab.com/samiulazim/dotfiles/-/blob/main/.zshrc), [Bash](https://gitlab.com/samiulazim/dotfiles/-/blob/main/.bashrc) [(+Starship Prompt)](https://gitlab.com/samiulazim/dotfiles/-/blob/main/.config/starship.toml)
+- **Terminal:** [Alacritty](https://gitlab.com/samiulazim/dotfiles/-/tree/main/.config/alacritty)
+- **Text Editor:** [Nvim](https://gitlab.com/samiulazim/neovim) 👉 [(See how to set up)](https://gitlab.com/samiulazim/neovim#-installation)
+- **Menus:** Dmenu
+- **File Manager:** Ranger, [Vifm](https://gitlab.com/samiulazim/dotfiles/-/tree/main/.config/vifm)
+- **Video Player:** VLC
+- **System Monitoring Dashboard:** Htop
+- **compositor:** Picom
+- **screensaver:** Nitrogen
+
+<br/>
+
+## Clone these dotfiles into a new computer
+
+I manage my dotfiles with a bare git repository and would encourage you to do the same. [How to?](https://www.atlassian.com/git/tutorials/dotfiles)
+clone this gitlab repository
+
+```
+git clone --bare https://gitlab.com/samiulazim/dotfiles.git $HOME/.dotfiles
+```
+
+define the alias in the current shell scope.
+
+```
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+```
+
+run this command if the alias is placed correctly in your shell.
+
+```
+dotfiles config --local status.showUntrackedFiles no
+```
+
+checkout the actual content from the git repository to your $HOME
+
+```
+dotfiles checkout
+```
+
+Awesome! You’re done.
