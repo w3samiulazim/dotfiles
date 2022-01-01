@@ -100,6 +100,8 @@ ex ()
 alias doas="doas --"
 
 # navigation
+alias :q='exit'
+
 up () {
   local d=""
   local limit="$1"
@@ -121,7 +123,6 @@ up () {
 
 # vim and emacs
 alias vim="nvim"
-alias :q='exit'
 alias em="/usr/bin/emacs -nw"
 alias emacs="emacsclient -c -a 'emacs'"
 alias doomsync="~/.emacs.d/bin/doom sync"
@@ -136,8 +137,15 @@ alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
 
-# pacman and yay
-alias update='sudo pacman -Syyu && paru -Syyu'   # update only standard pkgs
+# pacman, paru & yay
+alias update='sudo pacman -Syyu && paru -Syyu'   # update standard & AUR pkgs
+alias pacinstall='sudo pacman -S'                # install standard pks
+alias pacuninstall='sudo pacman -R'              # delete or uninstall standard pkgs
+alias pacdelete='sudo pacman -Rns'               # delete or uninstall standard pkgs with dependencies
+alias pacsc='sudo pacman -Sc'                    # delete old standard pkgs
+alias parinstall='paru -S'                       # install AUR pks with paru
+alias paruninstall='paru -R'                     # delete or uninstall AUR pkgs with paru
+alias pardelete='paru -Rns'                      # delete or uninstall AUR pkgs with dependencies
 alias pacsyu='sudo pacman -Syyu'                 # update only standard pkgs
 alias yaysua='yay -Sua --noconfirm'              # update only AUR pkgs (yay)
 alias yaysyu='yay -Syu --noconfirm'              # update standard pkgs and AUR pkgs (yay)
