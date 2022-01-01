@@ -135,7 +135,7 @@ alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
 
 # pacman, paru & yay
-alias update='sudo pacman -Syyu && paru -Syyu'   # update only standard pkgs
+alias update='sudo pacman -Syyu && paru -Syyu'   # update standard & AUR pkgs
 alias pacinstall='sudo pacman -S'                # install standard pks
 alias pacuninstall='sudo pacman -R'              # delete or uninstall standard pkgs
 alias pacdelete='sudo pacman -Rns'               # delete or uninstall standard pkgs with dependencies
