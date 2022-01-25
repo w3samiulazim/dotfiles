@@ -14,12 +14,12 @@
 ## Used Applications
 
 - **Distro:** Arch Linux
-- **Window Manager:** [Xmonad](https://gitlab.com/samiulazim/dotfiles/-/tree/main/.xmonad), [Spectrwm](https://gitlab.com/samiulazim/dotfiles/-/tree/main/.config/spectrwm)
-- **Shell:** [Fish](https://gitlab.com/samiulazim/dotfiles/-/tree/main/.config/fish), [Zsh](https://gitlab.com/samiulazim/dotfiles/-/blob/main/.zshrc), [Bash](https://gitlab.com/samiulazim/dotfiles/-/blob/main/.bashrc) [(+Starship Prompt)](https://gitlab.com/samiulazim/dotfiles/-/blob/main/.config/starship.toml)
-- **Terminal:** [Alacritty](https://gitlab.com/samiulazim/dotfiles/-/tree/main/.config/alacritty)
-- **Text Editor:** [Nvim](https://gitlab.com/samiulazim/neovim) 👉 [(See how to set up)](https://gitlab.com/samiulazim/neovim#-installation)
+- **Window Manager:** [Xmonad](https://github.com/iamsamiulazim/Dotfiles/tree/main/.xmonad), [Spectrwm](https://github.com/iamsamiulazim/Dotfiles/tree/main/.config/spectrwm)
+- **Shell:** [Fish](https://github.com/iamsamiulazim/Dotfiles/tree/main/.config/fish), [Zsh](https://github.com/iamsamiulazim/Dotfiles/blob/main/.zshrc), [Bash](https://github.com/iamsamiulazim/Dotfiles/blob/main/.bashrc) [(+Starship Prompt)](https://github.com/iamsamiulazim/Dotfiles/blob/main/.config/starship.toml)
+- **Terminal:** [Alacritty](https://github.com/iamsamiulazim/Dotfiles/tree/main/.config/alacritty)
+- **Text Editor:** [Nvim](https://github.com/iamsamiulazim/Neovim) 👉 [(See how to set up)](https://github.com/iamsamiulazim/neovim#-installation)
 - **Menus:** Dmenu
-- **File Manager:** Ranger, [Vifm](https://gitlab.com/samiulazim/dotfiles/-/tree/main/.config/vifm)
+- **File Manager:** Ranger, [Vifm](https://github.com/iamsamiulazim/Dotfiles/tree/main/.config/vifm)
 - **Video Player:** VLC
 - **System Monitoring Dashboard:** Htop
 - **compositor:** Picom
@@ -33,7 +33,7 @@ I manage my dotfiles with a bare git repository and would encourage you to do th
 clone this gitlab repository
 
 ```
-git clone --bare https://gitlab.com/samiulazim/dotfiles.git $HOME/.dotfiles
+git clone --bare https://github.com/iamsamiulazim/dotfiles.git $HOME/.dotfiles
 ```
 
 define the alias in the current shell scope.
