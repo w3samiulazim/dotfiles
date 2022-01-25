@@ -29,26 +29,33 @@
 
 ## Clone these dotfiles into a new computer
 
-I manage my dotfiles with a bare git repository and would encourage you to do the same. [How to?](https://www.atlassian.com/git/tutorials/dotfiles)
-clone this gitlab repository
+I manage my dotfiles with a bare git repository and would encourage you to do the same. <a href="https://www.atlassian.com/git/tutorials/dotfiles" target="_blank">How to?</a> clone this github repository
+
+- create a folder in your home directory ()
 
 ```
-git clone --bare https://github.com/iamsamiulazim/dotfiles.git $HOME/.dotfiles
+mkdir dotfiles
 ```
 
-define the alias in the current shell scope.
+- clone this github repository as bare
 
 ```
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+git clone --bare https://github.com/iamsamiulazim/dotfiles.git $HOME/dotfiles
 ```
 
-run this command if the alias is placed correctly in your shell.
+- define the alias in the current shell scope.
+
+```
+alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+```
+
+- run this command if the alias is placed correctly in your shell.
 
 ```
 dotfiles config --local status.showUntrackedFiles no
 ```
 
-checkout the actual content from the git repository to your $HOME
+- checkout the actual content from the git repository to your $HOME
 
 ```
 dotfiles checkout
