@@ -22,7 +22,7 @@
 - **File Manager:** Ranger, [Vifm](https://github.com/iamsamiulazim/Dotfiles/tree/main/.config/vifm)
 - **Video Player:** VLC
 - **System Monitoring Dashboard:** Htop
-- **compositor:** Picom
+- **compositor:** [Picom](https://github.com/iamsamiulazim/Dotfiles/blob/main/.config/picom/picom.conf)
 - **screensaver:** Nitrogen
 
 <br/>
