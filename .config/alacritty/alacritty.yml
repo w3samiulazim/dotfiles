@@ -117,7 +117,7 @@ font:
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
     # family: TerminessTTF Nerd Font
-    #family: Mononoki Nerd Font
+    # family: Mononoki Nerd Font
     family: Fantasque Sans Mono Nerd Font
 
     # The `style` can be specified to pick a specific face.
