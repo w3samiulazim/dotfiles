@@ -17,9 +17,9 @@ window:
   #
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
-  #dimensions:
-  #  columns: 0
-  #  lines: 0
+  dimensions:
+    columns: 140
+    lines: 50
 
   # Window position (changes require restart)
   #
@@ -119,6 +119,7 @@ font:
     # family: TerminessTTF Nerd Font
     # family: Mononoki Nerd Font
     family: Fantasque Sans Mono Nerd Font
+    # family: Fixedsys Excelsior
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -139,6 +140,7 @@ font:
     # family: TerminessTTF Nerd Font
     # family: Mononoki Nerd Font
     family: Fantasque Sans Mono Nerd Font
+    # family: Fixedsys Excelsior
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -159,6 +161,7 @@ font:
     # family: TerminessTTF Nerd Font
     # family: Mononoki Nerd Font
     family: Fantasque Sans Mono Nerd Font
+    # family: Fixedsys Excelsior
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -179,6 +182,7 @@ font:
     # family: TerminessTTF Nerd Font
     # family: Mononoki Nerd Font
     family: Fantasque Sans Mono Nerd Font
+    # family: Fixedsys Excelsior
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
