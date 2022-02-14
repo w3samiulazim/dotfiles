@@ -234,7 +234,7 @@ List of keybindings (SPC h b b)")
        :desc "Eww web browser" "w" #'eww
        :desc "Eww reload page" "R" #'eww-reload))
 
-(setq doom-font (font-spec :family "Sauce Code Pro Nerd Font" :size 17)
+(setq doom-font (font-spec :family "Sauce Code Pro Nerd Font" :size 16)
       doom-variable-pitch-font (font-spec :family "Ubuntu" :size 15)
       doom-big-font (font-spec :family "Sauce Code Pro Nerd Font" :size 24))
 (after! doom-themes
