@@ -11,6 +11,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # volumeicon &
 # nitrogen --restore &
 imwheel &
+xfce4-clipman &
 # xfce4-power-manager &
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # gnome-keyring-daemon --start --components=pkcs11 &
