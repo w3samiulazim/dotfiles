@@ -5,3 +5,7 @@
 "^brave-browser$"
     None, Up, Button4, 3
     None, Down, Button5, 3
+
+"^subl$"
+    None, Up, Button4, 3
+    None, Down, Button5, 3
