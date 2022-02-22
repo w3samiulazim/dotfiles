@@ -31,7 +31,7 @@
 
 I manage my dotfiles with a bare git repository and would encourage you to do the same. <a href="https://www.atlassian.com/git/tutorials/dotfiles" target="_blank">How to?</a> clone this github repository
 
-- create a folder in your home directory ()
+- create a folder in your home directory
 
 ```
 mkdir dotfiles
