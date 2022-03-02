@@ -128,7 +128,7 @@ myStartupHook = do
     -- spawnOnce "xargs xwallpaper --stretch < ~/.cache/wall"
     -- spawnOnce "~/.fehbg &"  -- set last saved feh wallpaper
     -- spawnOnce "feh --randomize --bg-fill ~/wallpapers/*"  -- feh set random wallpaper
-    spawnOnce "redshift-gtk -l 23.6850:90.3563 -t 6000:5000 -g 0.8 -m randr -v &"
+    spawnOnce "redshift-gtk -l 23.6850:90.3563 -t 6000:5400 -g 0.8 -m randr -v &"
     spawnOnce "nitrogen --restore &"   -- if you prefer nitrogen to feh
     setWMName "LG3D"
 
