@@ -2,6 +2,10 @@
     None, Up, Button4, 3
     None, Down, Button5, 3
 
+"^google-chrome$"
+    None, Up, Button4, 3
+    None, Down, Button5, 3
+
 "^brave-browser$"
     None, Up, Button4, 3
     None, Down, Button5, 3
