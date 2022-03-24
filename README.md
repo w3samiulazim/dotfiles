@@ -14,15 +14,15 @@
 ## Used Applications
 
 - **Distro:** Arch Linux
-- **Window Manager:** [Xmonad](https://github.com/samiul-azim/Dotfiles/tree/main/.xmonad), [Spectrwm](https://github.com/samiul-azim/Dotfiles/tree/main/.config/spectrwm)
-- **Shell:** [Fish](https://github.com/samiul-azim/Dotfiles/tree/main/.config/fish), [Zsh](https://github.com/samiul-azim/Dotfiles/blob/main/.zshrc), [Bash](https://github.com/samiul-azim/Dotfiles/blob/main/.bashrc) [(+Starship Prompt)](https://github.com/samiul-azim/Dotfiles/blob/main/.config/starship.toml)
-- **Terminal:** [Alacritty](https://github.com/samiul-azim/Dotfiles/tree/main/.config/alacritty)
-- **Text Editor:** [Nvim](https://github.com/samiul-azim/Neovim) 👉 [(See how to set up)](https://github.com/samiul-azim/neovim#-installation)
+- **Window Manager:** [Xmonad](https://github.com/w3samiulazim/Dotfiles/tree/main/.xmonad), [Spectrwm](https://github.com/w3samiulazim/Dotfiles/tree/main/.config/spectrwm)
+- **Shell:** [Fish](https://github.com/w3samiulazim/Dotfiles/tree/main/.config/fish), [Zsh](https://github.com/w3samiulazim/Dotfiles/blob/main/.zshrc), [Bash](https://github.com/w3samiulazim/Dotfiles/blob/main/.bashrc) [(+Starship Prompt)](https://github.com/w3samiulazim/Dotfiles/blob/main/.config/starship.toml)
+- **Terminal:** [Alacritty](https://github.com/w3samiulazim/Dotfiles/blob/main/.config/alacritty/alacritty.yml)
+- **Text Editor:** [Nvim](https://github.com/w3samiulazim/Neovim) 👉 [(See how to set up)](https://github.com/w3samiulazim/neovim#-installation)
 - **Menus:** Dmenu
-- **File Manager:** Ranger, [Vifm](https://github.com/samiul-azim/Dotfiles/tree/main/.config/vifm)
+- **File Manager:** Ranger, [Vifm](https://github.com/w3samiulazim/Dotfiles/tree/main/.config/vifm)
 - **Video Player:** VLC
 - **System Monitoring Dashboard:** Htop
-- **compositor:** [Picom](https://github.com/samiul-azim/Dotfiles/blob/main/.config/picom/picom.conf)
+- **compositor:** [Picom](https://github.com/w3samiulazim/Dotfiles/blob/main/.config/picom/picom.conf)
 - **screensaver:** Nitrogen
 
 <br/>
@@ -40,7 +40,7 @@ mkdir dotfiles
 - clone this github repository as bare
 
 ```
-git clone --bare https://github.com/samiul-azim/dotfiles.git $HOME/dotfiles
+git clone --bare https://github.com/w3samiulazim/dotfiles.git $HOME/dotfiles
 ```
 
 - define the alias in the current shell scope.
