@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+set hls
 filetype off                  " required
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
