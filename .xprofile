@@ -5,11 +5,11 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$HOME/.local/bin:$PATH"
 
-redshift-gtk -l 23.6850:90.3563 -t 6000:5400 -g 0.8 -m randr -v &
+redshift-gtk -l 23.6850:90.3563 -t 6200:5400 -g 0.8 -m randr -v &
 # picom -b &
 # nm-applet &
 # volumeicon &
-# nitrogen --restore &
+nitrogen --restore &
 imwheel &
 xfce4-clipman &
 # xfce4-power-manager &
