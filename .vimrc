@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
 set hls
+set scrolloff=5
 filetype off                  " required
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -11,6 +12,8 @@ call plug#begin('~/.vim/plugged')
 "{{ The Basics }}
     Plug 'gmarik/Vundle.vim'                           " Vundle
     Plug 'itchyny/lightline.vim'                       " Lightline statusbar
+    Plug 'taohexxx/lightline-buffer'
+    Plug 'itchyny/vim-gitbranch'
     Plug 'suan/vim-instant-markdown', {'rtp': 'after'} " Markdown Preview
     Plug 'frazrepo/vim-rainbow'
 "{{ Themes }}
@@ -18,13 +21,17 @@ call plug#begin('~/.vim/plugged')
     Plug 'NLKNguyen/papercolor-theme'
     Plug 'joshdick/onedark.vim'
     Plug 'morhetz/gruvbox'
+    Plug 'safv12/andromeda.vim'
+    Plug 'dracula/vim'
+    Plug 'ashfinal/vim-colors-violet'
 "{{ File management }}
     Plug 'vifm/vifm.vim'                               " Vifm
     Plug 'scrooloose/nerdtree'                         " Nerdtree
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'     " Highlighting Nerdtree
-    Plug 'ryanoasis/vim-devicons'                      " Icons for Nerdtree
+    Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'ryanoasis/vim-devicons'
 "{{ Productivity }}
-    Plug 'vimwiki/vimwiki'                             " VimWiki 
+    Plug 'vimwiki/vimwiki'                             " VimWiki
     Plug 'jreybert/vimagit'                            " Magit-like plugin for vim
     Plug 'voldikss/vim-floaterm'
     Plug 'jiangmiao/auto-pairs'
@@ -39,10 +46,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/goyo.vim'                           " Distraction-free viewing
     Plug 'junegunn/limelight.vim'                      " Hyperfocus on a range
     Plug 'junegunn/vim-emoji'                          " Vim needs emojis!
+"{{ Git Plugins }}
+    Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
-colorscheme PaperColor
+colorscheme andromeda
 set background=dark
 
 let &t_SI = "\e[6 q"
@@ -86,18 +95,107 @@ let g:rehash256 = 1
 :imap ii <Esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Git
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set updatetime=100
+let g:gitgutter_enabled = 1
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status Line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" The lightline.vim theme
+set hidden  " allow buffer switching without saving
+set showtabline=2  " always show tabline
+
+" use lightline-buffer in lightline
+set hidden  " allow buffer switching without saving
+set showtabline=2  " always show tabline
+
+" use lightline-buffer in lightline
 let g:lightline = {
-      \ 'colorscheme': 'PaperColor',
-      \ }
+    \ 'colorscheme': 'seoul256',
+    \   'active': {
+    \     'left': [
+    \       [ 'mode', 'paste' ],
+    \       [ 'gitbranch'],
+    \       [ 'readonly', 'filename', 'modified' ],
+    \     ],
+    \     'right': [
+    \       [ 'lineinfo' ],
+    \       [ 'percent' ],
+    \       [ 'fileformat', 'fileencoding', 'filetype' ],
+    \     ]
+    \   },
+    \ 'tabline': {
+    \   'left': [ [ 'bufferinfo' ],
+    \             [ 'separator' ],
+    \             [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
+    \   'right': [ [ 'close' ], ],
+    \ },
+    \ 'component_expand': {
+    \   'buffercurrent': 'lightline#buffer#buffercurrent',
+    \   'bufferbefore': 'lightline#buffer#bufferbefore',
+    \   'bufferafter': 'lightline#buffer#bufferafter',
+    \ },
+    \ 'component_type': {
+    \   'buffercurrent': 'tabsel',
+    \   'bufferbefore': 'raw',
+    \   'bufferafter': 'raw',
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'gitbranch#name',
+    \   'bufferinfo': 'lightline#buffer#bufferinfo',
+    \ },
+    \ 'component': {
+    \   'separator': '',
+    \ },
+    \ }
+
+" remap arrow keys
+nnoremap <Left> :bprev<CR>
+nnoremap <Right> :bnext<CR>
+
+" lightline-buffer ui settings
+" replace these symbols with ascii characters if your environment does not support unicode
+let g:lightline_buffer_logo = ' '
+let g:lightline_buffer_readonly_icon = ''
+let g:lightline_buffer_modified_icon = '✭'
+let g:lightline_buffer_git_icon = ' '
+let g:lightline_buffer_ellipsis_icon = '..'
+let g:lightline_buffer_expand_left_icon = '◀ '
+let g:lightline_buffer_expand_right_icon = ' ▶'
+let g:lightline_buffer_active_buffer_left_icon = ''
+let g:lightline_buffer_active_buffer_right_icon = ''
+let g:lightline_buffer_separator_icon = '  '
+
+" enable devicons, only support utf-8
+" require <https://github.com/ryanoasis/vim-devicons>
+let g:lightline_buffer_enable_devicons = 1
+
+" lightline-buffer function settings
+let g:lightline_buffer_show_bufnr = 1
+
+" :help filename-modifiers
+let g:lightline_buffer_fname_mod = ':t'
+
+" hide buffer list
+let g:lightline_buffer_excludes = ['vimfiler']
+
+" max file name length
+let g:lightline_buffer_maxflen = 30
+
+" max file extension length
+let g:lightline_buffer_maxfextlen = 3
+
+" min file name length
+let g:lightline_buffer_minflen = 16
+
+" min file extension length
+let g:lightline_buffer_minfextlen = 3
+
+" reserve length for other component (e.g. info, close)
+let g:lightline_buffer_reservelen = 20
 
 " Always show statusline
 set laststatus=2
-
-" Uncomment to prevent non-normal modes showing in powerline and below powerline.
-set noshowmode
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -175,14 +273,14 @@ map <Leader>th <C-w>t<C-w>H
 map <Leader>tk <C-w>t<C-w>K
 
 " Removes pipes | that act as seperators on splits
-set fillchars+=vert:\ 
+set fillchars+=vert:\
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Other Stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:python_highlight_all = 1
 
-au! BufRead,BufWrite,BufWritePost,BufNewFile *.org 
+au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
 au BufEnter *.org            call org#SetOrgFileType()
 
 set guioptions-=m  "remove menu bar
