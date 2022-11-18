@@ -1,8 +1,3 @@
-set nocompatible              " be iMproved, required
-set hls
-set scrolloff=5
-filetype off                  " required
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vundle For Managing Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -51,7 +46,7 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-colorscheme andromeda
+"colorscheme andromeda
 set background=dark
 
 let &t_SI = "\e[6 q"
@@ -76,6 +71,10 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible                " be iMproved, required.
+set hls                         " Search settings.
+set scrolloff=5                 " Scroll lock on line 5.
+set shortmess-=S                " Show search matches on statusline.
 set path+=**					" Searches current directory recursively.
 set wildmenu					" Display all matches when tab complete.
 set incsearch                   " Incremental search
@@ -85,6 +84,7 @@ set noswapfile                  " No swap
 set t_Co=256                    " Set if term supports 256 colors.
 set number relativenumber       " Display line numbers
 set clipboard=unnamedplus       " Copy/paste between vim and other programs.
+filetype off                    " required
 syntax enable
 let g:rehash256 = 1
 
