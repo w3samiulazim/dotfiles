@@ -3,6 +3,7 @@
 #[┣─system─❯](bold yellow) $hostname
 #[┣─project❯](bold red) $directory$rust$git_branch$git_status$package$golang$terraform$docker_context$python$docker_context$nodejs
 #[╰─cmd────❯](bold green)
+#"""
 
 [username]
 style_user = "green bold"
