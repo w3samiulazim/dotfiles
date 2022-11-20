@@ -19,6 +19,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'safv12/andromeda.vim'
     Plug 'dracula/vim'
     Plug 'ashfinal/vim-colors-violet'
+    Plug 'arzg/vim-colors-xcode'
 "{{ File management }}
     Plug 'vifm/vifm.vim'                               " Vifm
     Plug 'scrooloose/nerdtree'                         " Nerdtree
@@ -46,7 +47,7 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-"colorscheme andromeda
+" colorscheme xcodedarkhc
 set background=dark
 
 let &t_SI = "\e[6 q"
