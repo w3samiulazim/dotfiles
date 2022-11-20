@@ -250,9 +250,10 @@ map <Leader>ms :InstantMarkdownStop<CR>      " Kills the preview
 map <Leader>tt :vnew term://fish<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Mouse Scrolling
+" => Mouse Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set mouse=nicr
+set mouse=a
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Splits and Tabbed Files
