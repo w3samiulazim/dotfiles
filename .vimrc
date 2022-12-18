@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'sainnhe/everforest'
     Plug 'NLKNguyen/papercolor-theme'
     Plug 'joshdick/onedark.vim'
-    Plug 'morhetz/gruvbox'
+    Plug 'gruvbox-community/gruvbox'
     Plug 'safv12/andromeda.vim'
     Plug 'dracula/vim'
     Plug 'ashfinal/vim-colors-violet'
@@ -34,7 +34,7 @@ call plug#begin('~/.vim/plugged')
 "{{ Tim Pope Plugins }}
     Plug 'tpope/vim-surround'                          " Change surrounding marks
 "{{ Syntax Highlighting and Colors }}
-    Plug 'PotatoesMaster/i3-vim-syntax'                " i3 config highlighting
+    "Plug 'PotatoesM"ster/i3-vim-syntax'                " i3 config highlighting
     Plug 'kovetskiy/sxhkd-vim'                         " sxhkd highlighting
     Plug 'vim-python/python-syntax'                    " Python highlighting
     Plug 'ap/vim-css-color'                            " Color previews for CSS
@@ -47,7 +47,10 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-" colorscheme xcodedarkhc
+" Colorscheme Settings
+let g:gruvbox_contrast_dark = "hard"
+let g:gruvbox_contrast_light = "hard"
+colorscheme gruvbox
 set background=dark
 
 let &t_SI = "\e[6 q"
@@ -94,6 +97,8 @@ let g:rehash256 = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Leader Key
 let mapleader = " "
+" Set Cntrl Backspace to delete hole words
+inoremap {<CR> {<CR><BS>}<Esc>O
 
 " Remap ESC to ii
 :imap ii <Esc>
@@ -103,13 +108,6 @@ let mapleader = " "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set updatetime=100
 let g:gitgutter_enabled = 1
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" => Rainbow Brackets
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:rainbow_active = 1
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status Line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -295,7 +293,9 @@ let g:python_highlight_all = 1
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
 au BufEnter *.org            call org#SetOrgFileType()
 
-set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
+"set guioptions-=m  "remove menu bar
+"set guioptions-=T  "remove toolbar
+"set guioptions-=r  "remove right-hand scroll bar
+"set guioptions-=L  "remove left-hand scroll bar
+set anti enc=utf-8
+set guifont=Source\ Code\ Pro\ 13
