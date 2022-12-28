@@ -1,11 +1,10 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vundle For Managing Plugins
+" => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin('~/.vim/plugged')
 
 "{{ The Basics }}
-    Plug 'gmarik/Vundle.vim'                           " Vundle
     Plug 'itchyny/lightline.vim'                       " Lightline statusbar
     Plug 'taohexxx/lightline-buffer'
     Plug 'itchyny/vim-gitbranch'
@@ -21,13 +20,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'ashfinal/vim-colors-violet'
     Plug 'arzg/vim-colors-xcode'
 "{{ File management }}
-    Plug 'vifm/vifm.vim'                               " Vifm
     Plug 'scrooloose/nerdtree'                         " Nerdtree
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'     " Highlighting Nerdtree
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'ryanoasis/vim-devicons'
 "{{ Productivity }}
-    Plug 'vimwiki/vimwiki'                             " VimWiki
     Plug 'jreybert/vimagit'                            " Magit-like plugin for vim
     Plug 'voldikss/vim-floaterm'
     Plug 'jiangmiao/auto-pairs'
@@ -63,15 +60,6 @@ filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
 
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -81,7 +69,7 @@ set scrolloff=5                 " Scroll lock on line 5.
 set shortmess-=S                " Show search matches on statusline.
 set path+=**					" Searches current directory recursively.
 set wildmenu					" Display all matches when tab complete.
-set incsearch                   " Incremental search
+set incsearch ignorecase        " Incremental search
 set hidden                      " Needed to keep multiple buffers open
 set nobackup                    " No auto backups
 set noswapfile                  " No swap
@@ -89,10 +77,18 @@ set t_Co=256                    " Set if term supports 256 colors.
 set number relativenumber       " Display line numbers
 set clipboard=unnamedplus       " Copy/paste between vim and other programs.
 filetype off                    " required
-set ts=4
-set sw=4
 syntax enable
 let g:rehash256 = 1
+set showtabline=2               " always show tabline
+set laststatus=2                " always show statusline
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and indent related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set expandtab                   " Use spaces instead of tabs.
+set smarttab                    " Be smart using tabs ;)
+set shiftwidth=4                " One tab == four spaces.
+set tabstop=4                   " One tab == four spaces.
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Remap Keys
@@ -110,16 +106,10 @@ inoremap {<CR> {<CR><BS>}<Esc>O
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set updatetime=100
 let g:gitgutter_enabled = 1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status Line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set hidden  " allow buffer switching without saving
-set showtabline=2  " always show tabline
-
-" use lightline-buffer in lightline
-set hidden  " allow buffer switching without saving
-set showtabline=2  " always show tabline
-
 " use lightline-buffer in lightline
 let g:lightline = {
     \ 'colorscheme': 'seoul256',
@@ -205,17 +195,6 @@ let g:lightline_buffer_minfextlen = 3
 " reserve length for other component (e.g. info, close)
 let g:lightline_buffer_reservelen = 20
 
-" Always show statusline
-set laststatus=2
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set expandtab                   " Use spaces instead of tabs.
-set smarttab                    " Be smart using tabs ;)
-set shiftwidth=4                " One tab == four spaces.
-set tabstop=4                   " One tab == four spaces.
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -230,32 +209,12 @@ let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=38
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vifm
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Leader>vv :Vifm<CR>
-map <Leader>vs :VsplitVifm<CR>
-map <Leader>sp :SplitVifm<CR>
-map <Leader>dv :DiffVifm<CR>
-map <Leader>tv :TabVifm<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VimWiki
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim-Instant-Markdown
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:instant_markdown_autostart = 0         " Turns off auto preview
 let g:instant_markdown_browser = "surf"      " Uses surf for preview
 map <Leader>md :InstantMarkdownPreview<CR>   " Previews .md file
 map <Leader>ms :InstantMarkdownStop<CR>      " Kills the preview
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Open terminal inside Vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Leader>tt :vnew term://fish<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mouse Settings
@@ -299,5 +258,10 @@ au BufEnter *.org            call org#SetOrgFileType()
 "set guioptions-=T  "remove toolbar
 "set guioptions-=r  "remove right-hand scroll bar
 "set guioptions-=L  "remove left-hand scroll bar
-set anti enc=utf-8
-set guifont=Source\ Code\ Pro\ 13
+"set guifont=Source\ Code\ Pro\ 13
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Compitative Programming Setup
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufNewFile *.cpp 0r ~/cpp-templates/default.cpp
+let @t = 'oint t;^Mcin >> t;^Mwhile(t--){^M^['
