@@ -35,6 +35,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-python/python-syntax'                    " Python highlighting
     Plug 'ap/vim-css-color'                            " Color previews for CSS
     Plug 'Yggdroot/indentLine'
+    Plug 'bfrg/vim-cpp-modern'
 "{{ Junegunn Choi Plugins }}
     Plug 'junegunn/goyo.vim'                           " Distraction-free viewing
     Plug 'junegunn/limelight.vim'                      " Hyperfocus on a range
@@ -61,6 +62,16 @@ let g:indentLine_faster = 1
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_color_term = 239
 let g:indentLine_setconceal = 0
+
+" C/C++ syntax improve with pluging
+
+let g:cpp_function_highlight = 1
+
+let g:cpp_attributes_highlight = 1
+
+let g:cpp_member_highlight = 1
+
+let g:cpp_simple_highlight = 1
 
 "Cursor settings
 let &t_SI = "\e[6 q"
