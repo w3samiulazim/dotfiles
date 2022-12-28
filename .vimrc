@@ -31,10 +31,10 @@ call plug#begin('~/.vim/plugged')
 "{{ Tim Pope Plugins }}
     Plug 'tpope/vim-surround'                          " Change surrounding marks
 "{{ Syntax Highlighting and Colors }}
-    "Plug 'PotatoesM"ster/i3-vim-syntax'                " i3 config highlighting
     Plug 'kovetskiy/sxhkd-vim'                         " sxhkd highlighting
     Plug 'vim-python/python-syntax'                    " Python highlighting
     Plug 'ap/vim-css-color'                            " Color previews for CSS
+    Plug 'Yggdroot/indentLine'
 "{{ Junegunn Choi Plugins }}
     Plug 'junegunn/goyo.vim'                           " Distraction-free viewing
     Plug 'junegunn/limelight.vim'                      " Hyperfocus on a range
@@ -44,17 +44,27 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Syntax and theming
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme Settings
-let g:gruvbox_contrast_dark = "hard"
-let g:gruvbox_contrast_light = "hard"
 colorscheme gruvbox
 set background=dark
+let g:gruvbox_contrast_dark = "hard"
+let g:gruvbox_contrast_light = "hard"
 
+" Rainbow bracets settings
+let g:rainbow_active = 1
+
+" Indent Line settings
+let g:indentLine_faster = 1
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_color_term = 239
+let g:indentLine_setconceal = 0
+
+"Cursor settings
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
-
-" Float Term Key Map
-nnoremap   <silent>   <F4>    :FloatermNew<CR>
 
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -100,6 +110,9 @@ inoremap {<CR> {<CR><BS>}<Esc>O
 
 " Remap ESC to ii
 :imap ii <Esc>
+
+" Float Term Key Map
+nnoremap   <silent>   <F4>    :FloatermNew<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git
