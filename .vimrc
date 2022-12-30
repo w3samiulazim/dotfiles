@@ -9,7 +9,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'taohexxx/lightline-buffer'
     Plug 'itchyny/vim-gitbranch'
     Plug 'suan/vim-instant-markdown', {'rtp': 'after'} " Markdown Preview
-    Plug 'frazrepo/vim-rainbow'
 "{{ Themes }}
     Plug 'sainnhe/everforest'
     Plug 'NLKNguyen/papercolor-theme'
@@ -34,6 +33,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'kovetskiy/sxhkd-vim'                         " sxhkd highlighting
     Plug 'vim-python/python-syntax'                    " Python highlighting
     Plug 'ap/vim-css-color'                            " Color previews for CSS
+    Plug 'frazrepo/vim-rainbow'
     Plug 'Yggdroot/indentLine'
     Plug 'bfrg/vim-cpp-modern'
 "{{ Junegunn Choi Plugins }}
