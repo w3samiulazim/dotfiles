@@ -116,6 +116,7 @@ set tabstop=4                   " One tab == four spaces.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Leader Key
 let mapleader = " "
+
 " Set Cntrl Backspace to delete hole words
 inoremap {<CR> {<CR><BS>}<Esc>O
 
