@@ -33,7 +33,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'kovetskiy/sxhkd-vim'                         " sxhkd highlighting
     Plug 'vim-python/python-syntax'                    " Python highlighting
     Plug 'ap/vim-css-color'                            " Color previews for CSS
-    Plug 'frazrepo/vim-rainbow'
+    Plug 'luochen1990/rainbow'
     Plug 'Yggdroot/indentLine'
     Plug 'bfrg/vim-cpp-modern'
 "{{ Junegunn Choi Plugins }}
